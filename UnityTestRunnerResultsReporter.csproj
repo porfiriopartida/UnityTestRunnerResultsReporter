@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy &quot;$(SolutionDir)\Template&quot; &quot;$(TargetDir)&quot; /e /Y" />
+    <Exec Command="xcopy $(SolutionDir)/Template; $(TargetDir)/Template; /e /Y" />
   </Target>
 
 </Project>
