@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="cp $(SolutionDir)/Template; $(TargetDir)/Template; /e /Y" />
+<!--    <Exec Command="cp $(SolutionDir)/Template; $(TargetDir)/Template; /e /Y" />-->
+    <Copy SourceFiles="$(SolutionDir)/Template" DestinationFolder="$(TargetDir)/Template" />
   </Target>
 
 </Project>
