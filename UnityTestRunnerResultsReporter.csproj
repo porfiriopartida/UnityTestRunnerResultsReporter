@@ -11,11 +11,7 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <PostBuildEvent Condition="cp $(SolutionDir)/Template $(TargetDir)/Template" />
-    <PostBuildEvent Condition="echo $(SolutionDir) " />
-    <PostBuildEvent Condition="echo $(OutDir) " />
-<!--    <Exec Command="cp $(SolutionDir)/Template; $(TargetDir)/Template; /e /Y" />-->
-<!--    <Copy SourceFiles="Template" DestinationFolder="$(OutDir)/Template" />-->
+    <PostBuildEvent Condition="cp Template bin/Release/net5.0/Template" />
   </PropertyGroup>
 
 </Project>
