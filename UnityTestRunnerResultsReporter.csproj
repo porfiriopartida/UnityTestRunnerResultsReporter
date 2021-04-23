@@ -11,7 +11,7 @@
   
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="echo After Build: $(OutDir)" />
-    <Exec Command="cp -r Template $(OutDir)/Template" />
+    <Exec Command="cp -r Template/* $(OutDir)/" />
   </Target>
 
 </Project>
