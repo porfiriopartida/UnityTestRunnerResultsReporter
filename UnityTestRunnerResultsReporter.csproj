@@ -1,4 +1,6 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project>
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -11,8 +13,8 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <PostBuildEvent>cp Template $(OutDir)/Template</PostBuildEvent>
-<!--    <PostBuildEvent>cp Template bin/Release/net5.0/Template</PostBuildEvent>-->
+    <PostBuildEvent>echo $(OutDir)</PostBuildEvent>
+    <PostBuildEvent>cp Template bin/Release/net5.0/Template</PostBuildEvent>
   </PropertyGroup>
 
 </Project>
