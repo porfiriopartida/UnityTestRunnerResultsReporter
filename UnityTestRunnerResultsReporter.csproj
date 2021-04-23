@@ -11,7 +11,11 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <PostBuildEvent Condition="cp Template bin/Release/net5.0/Template" />
+    <PostBuildEvent>echo $(SolutionDir)</PostBuildEvent>
+    <PostBuildEvent>echo $(TargetDir)</PostBuildEvent>
+    <PostBuildEvent>echo $(OutDir)</PostBuildEvent>
+    <PostBuildEvent>cp $(SolutionDir)/Template $(TargetDir)/Template</PostBuildEvent>
+<!--    <PostBuildEvent>cp Template bin/Release/net5.0/Template</PostBuildEvent>-->
   </PropertyGroup>
 
 </Project>
