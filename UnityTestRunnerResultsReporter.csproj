@@ -10,9 +10,12 @@
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  <PropertyGroup>
+    <PostBuildEvent Condition="cp $(SolutionDir)/Template $(TargetDir)/Template" />
+    <PostBuildEvent Condition="echo $(SolutionDir) " />
+    <PostBuildEvent Condition="echo $(OutDir) " />
 <!--    <Exec Command="cp $(SolutionDir)/Template; $(TargetDir)/Template; /e /Y" />-->
-    <Copy SourceFiles="Template" DestinationFolder="$(OutDir)/Template" />
-  </Target>
+<!--    <Copy SourceFiles="Template" DestinationFolder="$(OutDir)/Template" />-->
+  </PropertyGroup>
 
 </Project>
